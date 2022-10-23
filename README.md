@@ -1,0 +1,3 @@
+# DecaHex
+
+Note: DecaHex is a placeholder name for the game
