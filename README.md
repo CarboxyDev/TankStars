@@ -1,3 +1,3 @@
-# DecaHex
+# Tank Stars
 
-Note: DecaHex is a placeholder name for the game
+This game is built using the libgdx framework in Java.
