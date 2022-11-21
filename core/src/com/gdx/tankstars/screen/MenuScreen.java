@@ -29,18 +29,15 @@ public class MenuScreen implements Screen {
     @Override
     public void render(float delta) {
         if (Gdx.input.justTouched()) {
-            int x = Gdx.input.getX();
-            int y = Gdx.input.getY();
-            // handle event when button-1 is clicked
-            Rectangle rect1 = new Rectangle();
-            rect1.x = 875;
-            rect1.y = 42;
-            rect1.width = 333;
-            rect1.height = 87;
-            if ((x > rect1.x && x < (rect1.x + rect1.width)) && (y > rect1.y && y < (rect1.y + rect1.height))) {
-                game.setScreen(new Tank1Screen(game));
-            }
+            Rectangle button1_rect = new Rectangle(875, 42, 333, 87);
 
+            float x = Gdx.input.getX();
+            float y = Gdx.input.getY();
+
+            if (button1_rect.contains(x, y)) {
+                game.setScreen(new Tank1Screen(game));
+                button1.dispose();
+            }
         }
 
         game.getBatch().begin();
