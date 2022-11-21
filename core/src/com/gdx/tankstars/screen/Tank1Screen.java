@@ -3,36 +3,32 @@ package com.gdx.tankstars.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.gdx.tankstars.TankStarsGame;
 
-public class StartScreen implements Screen {
+public class Tank1Screen implements Screen {
 
     TankStarsGame game;
-    Texture startScreenTexture;
-    float timeCounter;
+    private ShapeRenderer shapeRenderer;
+    private Texture tank1Screen;
 
-    public StartScreen(TankStarsGame game) {
+    public Tank1Screen(TankStarsGame game) {
         this.game = game;
+        tank1Screen = new Texture(Gdx.files.internal("tank-1-screen.png"));
     }
+
 
 
     @Override
     public void show() {
-        startScreenTexture = new Texture(Gdx.files.internal("start-screen.png"));
+
     }
 
     @Override
     public void render(float delta) {
-        timeCounter += delta;
-
         game.batch.begin();
-        game.batch.draw(startScreenTexture, 0, 0);
+        game.batch.draw(tank1Screen, 0, 0);
         game.batch.end();
-
-        if (timeCounter > 5) {
-            game.setScreen(new MenuScreen(game));
-            this.dispose();
-        }
     }
 
     @Override
@@ -57,6 +53,6 @@ public class StartScreen implements Screen {
 
     @Override
     public void dispose() {
-        startScreenTexture.dispose();
+
     }
 }
