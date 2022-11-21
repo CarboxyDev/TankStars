@@ -1,5 +1,6 @@
 package com.gdx.tankstars;
 
+import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.gdx.tankstars.TankStarsGame;
@@ -15,6 +16,7 @@ public class DesktopLauncher {
     config.setWindowedMode(1280, 720);
     config.setResizable(false);
     config.setTitle("Tank Stars");
+    //config.setWindowIcon("start-screen.png");
     new Lwjgl3Application(new TankStarsGame(), config);
   }
 }
