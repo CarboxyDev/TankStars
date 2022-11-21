@@ -12,7 +12,8 @@ public class DesktopLauncher {
     config.setForegroundFPS(60);
     config.setIdleFPS(60);
     config.useVsync(true);
-    config.setWindowedMode(1920, 1080);
+    config.setWindowedMode(1280, 720);
+    config.setResizable(false);
     config.setTitle("Tank Stars");
     new Lwjgl3Application(new TankStarsGame(), config);
   }
