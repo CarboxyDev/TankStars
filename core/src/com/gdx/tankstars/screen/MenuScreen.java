@@ -13,6 +13,8 @@ public class MenuScreen implements Screen {
     private ShapeRenderer shapeRenderer;
     private Texture menuScreen;
     private Texture button1;
+    private final Rectangle button1_rect = new Rectangle(875, 42, 333, 87);
+
 
 
     public MenuScreen(TankStarsGame game) {
@@ -29,14 +31,13 @@ public class MenuScreen implements Screen {
     @Override
     public void render(float delta) {
         if (Gdx.input.justTouched()) {
-            Rectangle button1_rect = new Rectangle(875, 42, 333, 87);
 
-            float x = Gdx.input.getX();
-            float y = Gdx.input.getY();
+            int x = Gdx.input.getX();
+            int y = Gdx.input.getY();
 
             if (button1_rect.contains(x, y)) {
                 game.setScreen(new Tank1Screen(game));
-                button1.dispose();
+                this.dispose();
             }
         }
 
@@ -69,6 +70,7 @@ public class MenuScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        menuScreen.dispose();
+        button1.dispose();
     }
 }

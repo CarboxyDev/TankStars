@@ -65,7 +65,7 @@ public class TankScreen implements Screen  {
                 this.dispose();
             }
             else {
-                System.out.printf("x: %d  y:%d\n", x, y);
+                System.out.printf("TankScreen: x: %d  y:%d\n", x, y);
             }
         }
 
