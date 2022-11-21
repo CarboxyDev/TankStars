@@ -13,4 +13,5 @@ public class Tank1Screen extends TankScreen {
         super(game, "tank-1-screen.png");
         this.game = game;
     }
+
 }

@@ -9,11 +9,10 @@ import com.gdx.tankstars.TankStarsGame;
 
 public class MenuScreen implements Screen {
 
-    TankStarsGame game;
+    private TankStarsGame game;
     private ShapeRenderer shapeRenderer;
-    Texture menuScreen;
-    Texture tank1Screen;
-    Texture button1;
+    private Texture menuScreen;
+    private Texture button1;
 
 
     public MenuScreen(TankStarsGame game) {
@@ -29,7 +28,7 @@ public class MenuScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        if (Gdx.input.isTouched()) {
+        if (Gdx.input.justTouched()) {
             int x = Gdx.input.getX();
             int y = Gdx.input.getY();
             // handle event when button-1 is clicked
@@ -39,16 +38,15 @@ public class MenuScreen implements Screen {
             rect1.width = 333;
             rect1.height = 87;
             if ((x > rect1.x && x < (rect1.x + rect1.width)) && (y > rect1.y && y < (rect1.y + rect1.height))) {
-                System.out.printf("clicked button x: %d  y: %d\n", x, y);
                 game.setScreen(new Tank1Screen(game));
             }
 
         }
 
-        game.batch.begin();
-        game.batch.draw(menuScreen, 0, 0);
-        game.batch.draw(button1, 875, 590);
-        game.batch.end();
+        game.getBatch().begin();
+        game.getBatch().draw(menuScreen, 0, 0);
+        game.getBatch().draw(button1, 875, 590);
+        game.getBatch().end();
 
     }
 

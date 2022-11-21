@@ -7,9 +7,9 @@ import com.gdx.tankstars.TankStarsGame;
 
 public class StartScreen implements Screen {
 
-    TankStarsGame game;
-    Texture startScreenTexture;
-    float timeCounter;
+    private TankStarsGame game;
+    private Texture startScreenTexture;
+    private float timeCounter;
 
     public StartScreen(TankStarsGame game) {
         this.game = game;
@@ -25,9 +25,9 @@ public class StartScreen implements Screen {
     public void render(float delta) {
         timeCounter += delta;
 
-        game.batch.begin();
-        game.batch.draw(startScreenTexture, 0, 0);
-        game.batch.end();
+        game.getBatch().begin();
+        game.getBatch().draw(startScreenTexture, 0, 0);
+        game.getBatch().end();
 
         if (timeCounter > 5) {
             game.setScreen(new MenuScreen(game));
