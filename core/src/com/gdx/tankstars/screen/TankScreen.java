@@ -61,7 +61,7 @@ public class TankScreen implements Screen  {
             }
             else if (buttonStart_rect.contains(x, y)) {
                 System.out.println("Start button");
-                game.setScreen(new StartScreen(game)); // temp for placeholder purposes
+                game.setScreen(new GameMatchScreen(game));
                 this.dispose();
             }
             else {
