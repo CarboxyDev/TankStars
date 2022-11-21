@@ -1,21 +1,15 @@
 package com.gdx.tankstars;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdx.tankstars.screen.StartScreen;
 
 public class TankStarsGame extends Game {
 
   private SpriteBatch batch;
-  private Texture img;
 
   public SpriteBatch getBatch() {
     return batch;
-  }
-
-  public Texture getImg() {
-    return img;
   }
 
 
@@ -33,6 +27,5 @@ public class TankStarsGame extends Game {
   @Override
   public void dispose() {
     batch.dispose();
-    img.dispose();
   }
 }

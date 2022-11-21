@@ -8,9 +8,15 @@ import com.gdx.tankstars.TankStarsGame;
 
 public class TankScreen implements Screen  {
 
-    private TankStarsGame game;
+    private final TankStarsGame game;
     private Texture tankScreen;
+    private Texture buttonStart;
     private String screenPath;
+
+    private final Rectangle tank1_rect = new Rectangle(835, 302, 118, 118);
+    private final Rectangle tank2_rect = new Rectangle(978,302,118, 118);
+    private final Rectangle tank3_rect = new Rectangle(1126, 302, 118, 118);
+    private final Rectangle buttonStart_rect = new Rectangle(914, 541, 1163 - 914, 620 - 541);
 
     public TankScreen(TankStarsGame game, String screenPath) {
         this.game = game;
@@ -26,38 +32,37 @@ public class TankScreen implements Screen  {
     }
 
 
-
-
     @Override
     public void show() {
         tankScreen = new Texture(Gdx.files.internal(screenPath));
+        buttonStart = new Texture(Gdx.files.internal("button-start.png"));
     }
 
     @Override
     public void render(float delta) {
-
         if (Gdx.input.justTouched()) {
-            Rectangle tank1_rect = new Rectangle(835, 302, 118, 118);
-            Rectangle tank2_rect = new Rectangle(978,302,118, 118);
-            Rectangle tank3_rect = new Rectangle(1126, 302, 118, 118);
-
             int x = Gdx.input.getX();
             int y = Gdx.input.getY();
 
             if (tank1_rect.contains(x, y)) {
                 System.out.println("Select tank 1");
                 game.setScreen(new Tank1Screen(game));
-                this.tankScreen.dispose();
+                this.dispose();
             }
             else if (tank2_rect.contains(x, y)) {
                 System.out.println("Select tank 2");
                 game.setScreen(new Tank2Screen(game));
-                this.tankScreen.dispose();
+                this.dispose();
             }
             else if (tank3_rect.contains(x, y)) {
                 System.out.println("Select tank 3");
                 game.setScreen(new Tank3Screen(game));
-                this.tankScreen.dispose();
+                this.dispose();
+            }
+            else if (buttonStart_rect.contains(x, y)) {
+                System.out.println("Start button");
+                game.setScreen(new StartScreen(game)); // temp for placeholder purposes
+                this.dispose();
             }
             else {
                 System.out.printf("x: %d  y:%d\n", x, y);
@@ -66,6 +71,7 @@ public class TankScreen implements Screen  {
 
         game.getBatch().begin();
         game.getBatch().draw(tankScreen, 0, 0);
+        game.getBatch().draw(buttonStart, 813, 0); // had to use weird unrealistic coords here due to libgdx being weird.
         game.getBatch().end();
     }
 
@@ -82,5 +88,7 @@ public class TankScreen implements Screen  {
     public void hide() {}
 
     @Override
-    public void dispose() {}
+    public void dispose() {
+        this.tankScreen.dispose();
+    }
 }
