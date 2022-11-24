@@ -36,8 +36,8 @@ public class StartScreen implements Screen {
             }
             else if (buttonLoad_rect.contains(x, y)) {
                 System.out.println("Select load button");
-                //game.setScreen(new LoadScreen(game));
-                //this.dispose();
+                game.setScreen(new LoadGameScreen(game));
+                this.dispose();
             }
             else if (buttonExit_rect.contains(x, y)) {
                 System.out.println("Select exit button");
