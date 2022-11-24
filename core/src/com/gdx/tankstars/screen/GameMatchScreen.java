@@ -3,12 +3,14 @@ package com.gdx.tankstars.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Circle;
 import com.gdx.tankstars.TankStarsGame;
 
 public class GameMatchScreen implements Screen {
     private TankStarsGame game;
     private Texture gameMatchScreenTexture;
     private Texture pauseButtonTexture;
+    private Circle pauseButton = new Circle(1248, 32, 18);
 
     public GameMatchScreen(TankStarsGame game) {
         this.game = game;
@@ -22,6 +24,22 @@ public class GameMatchScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        if (Gdx.input.justTouched()) {
+            int x = Gdx.input.getX();
+            int y = Gdx.input.getY();
+
+            if (pauseButton.contains(x, y)) {
+                System.out.println("Press pause button");
+                game.setScreen(new GamePauseScreen(game));
+                this.dispose();
+            }
+
+            else {
+                System.out.printf("GameMatchScreen: x: %d  y:%d\n", x, y);
+            }
+        }
+
+
         game.getBatch().begin();
         game.getBatch().draw(gameMatchScreenTexture, 0, 0);
         game.getBatch().draw(pauseButtonTexture, 1230 , 670);
@@ -51,6 +69,7 @@ public class GameMatchScreen implements Screen {
     @Override
     public void dispose() {
         gameMatchScreenTexture.dispose();
+        pauseButtonTexture.dispose();
     }
 
 }
