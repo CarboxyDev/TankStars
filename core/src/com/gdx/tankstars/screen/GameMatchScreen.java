@@ -8,6 +8,7 @@ import com.gdx.tankstars.TankStarsGame;
 public class GameMatchScreen implements Screen {
     private TankStarsGame game;
     private Texture gameMatchScreenTexture;
+    private Texture pauseButtonTexture;
 
     public GameMatchScreen(TankStarsGame game) {
         this.game = game;
@@ -16,12 +17,14 @@ public class GameMatchScreen implements Screen {
     @Override
     public void show() {
         gameMatchScreenTexture = new Texture(Gdx.files.internal("bg-game.png"));
+        pauseButtonTexture = new Texture(Gdx.files.internal("button-pause.png"));
     }
 
     @Override
     public void render(float delta) {
         game.getBatch().begin();
         game.getBatch().draw(gameMatchScreenTexture, 0, 0);
+        game.getBatch().draw(pauseButtonTexture, 1230 , 670);
         game.getBatch().end();
     }
 
