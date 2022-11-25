@@ -18,7 +18,7 @@ public class GameMatchScreen implements Screen {
 
     @Override
     public void show() {
-        gameMatchScreenTexture = new Texture(Gdx.files.internal("bg-game.png"));
+        gameMatchScreenTexture = new Texture(Gdx.files.internal("game-match-screen.png"));
         pauseButtonTexture = new Texture(Gdx.files.internal("button-pause.png"));
     }
 
