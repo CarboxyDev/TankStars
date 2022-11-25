@@ -38,7 +38,7 @@ public class GamePauseScreen implements Screen {
             }
             else if (buttonSave.contains(x, y)) {
                 System.out.println("Press save button");
-                this.dispose();
+                //this.dispose();
             }
             else if (buttonStartMenu.contains(x, y)) {
                 System.out.println("Press main menu button");
