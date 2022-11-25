@@ -2,12 +2,11 @@ package com.gdx.tankstars.screen;
 
 import com.gdx.tankstars.TankStarsGame;
 
-public class TankBlazeScreen extends TankScreen {
+public class BeastTankScreen extends TankScreen {
     private TankStarsGame game;
 
-    public TankBlazeScreen(TankStarsGame game) {
-        super(game, "tank-1-screen.png");
+    public BeastTankScreen(TankStarsGame game) {
+        super(game, "tank-3-screen.png");
         this.game = game;
     }
-
 }

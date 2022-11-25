@@ -46,17 +46,17 @@ public class TankScreen implements Screen  {
 
             if (tank1_rect.contains(x, y)) {
                 System.out.println("Select tank 1");
-                game.setScreen(new TankBlazeScreen(game));
+                game.setScreen(new BlazeTankScreen(game));
                 this.dispose();
             }
             else if (tank2_rect.contains(x, y)) {
                 System.out.println("Select tank 2");
-                game.setScreen(new TankFrostbiteScreen(game));
+                game.setScreen(new FrostbiteTankScreen(game));
                 this.dispose();
             }
             else if (tank3_rect.contains(x, y)) {
                 System.out.println("Select tank 3");
-                game.setScreen(new TankBeastScreen(game));
+                game.setScreen(new BeastTankScreen(game));
                 this.dispose();
             }
             else if (buttonStart_rect.contains(x, y)) {
