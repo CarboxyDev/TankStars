@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.gdx.tankstars.TankStarsGame;
+import com.gdx.tankstars.game.GameMatch;
 
 public class GameMatchScreen implements Screen {
 
@@ -18,6 +19,8 @@ public class GameMatchScreen implements Screen {
     @Override
     public void show() {
         backgroundTexture = new Texture(Gdx.files.internal("background.png"));
+        GameMatch gameMatch = new GameMatch(game);
+        gameMatch.start();
     }
 
     @Override
