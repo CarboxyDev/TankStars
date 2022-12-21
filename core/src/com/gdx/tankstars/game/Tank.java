@@ -1,5 +1,6 @@
 package com.gdx.tankstars.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -15,10 +16,8 @@ public abstract class Tank extends Sprite {
     private int type;
     private int player;
     private Vector2 position;
-
-
-
     private Texture tankTexture;
+
 
     public void burnFuel() {
         fuel--;
@@ -38,15 +37,16 @@ public abstract class Tank extends Sprite {
         this.type = type;
         String texturePath = "";
         if (type == 1) {
-            texturePath = "tanks/blaze.png";
+            texturePath = "tanks/blaze_left.png";
         }
         if (type == 2) {
-            texturePath = "tanks/frostbite.png";
+            texturePath = "tanks/frostbite_left.png";
         }
         if (type == 3) {
-            texturePath = "tanks/beast.png";
-        }
-        this.tankTexture = new Texture(texturePath);
+            texturePath = "tanks/beast_left.png";
+        };
+
+        this.tankTexture = new Texture(Gdx.files.internal(texturePath));
         System.out.println("Changed tank type to " + type);
     }
 
@@ -75,25 +75,6 @@ public abstract class Tank extends Sprite {
             this.position = position;
             this.burnFuel();
         }
-    }
-
-
-    public void move(float deltaTime) {
-        translate(getVelocity().x * deltaTime, getVelocity().y * deltaTime);
-    }
-
-    public void setVelocity(Vector2 velocity) {
-        setVelocity(velocity.x, velocity.y);
-    }
-
-    // Set the velocity of the tank
-    public void setVelocity(float x, float y) {
-        setX(getX() + x);
-        setY(getY() + y);
-    }
-
-    public Vector2 getVelocity() {
-        return new Vector2(getX(), getY());
     }
 
     // Rotate the tank by the specified angle

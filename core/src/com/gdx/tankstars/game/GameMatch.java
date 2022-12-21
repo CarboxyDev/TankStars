@@ -31,7 +31,7 @@ public class GameMatch extends State {
         this.tank1 = new Tank1(new Vector2(100, 200));
         this.tank2 = new Tank2(new Vector2(1100, 200));
         tank1.setPlayer(1);
-        tank1.setPlayer(2);
+        tank2.setPlayer(2);
 
         int t1 = game.getPlayer1();
         int t2 = game.getPlayer2();
@@ -44,10 +44,6 @@ public class GameMatch extends State {
         }
         tank1.setType(t1);
         tank2.setType(t2);
-
-        this.tank1 = new Tank1(new Vector2(100, 100));
-        this.tank2 = new Tank2(new Vector2(1100, 100));
-
 
     }
 

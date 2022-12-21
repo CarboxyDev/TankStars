@@ -10,7 +10,6 @@ public class Tank2 extends Tank {
 
     public Tank2(Vector2 position) {
         super();
-        this.tankTexture = new Texture(Gdx.files.internal("tanks/blaze_right.png"));
         this.setPosition(position);
 
     }

@@ -12,7 +12,6 @@ public class Tank1 extends Tank {
 
     public Tank1(Vector2 position) {
         super();
-        this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_left.png"));
         this.setPosition(position);
 
     }
@@ -20,6 +19,7 @@ public class Tank1 extends Tank {
     @Override
     public void draw(SpriteBatch batch) {
         Vector2 position = this.getPosition();
+        System.out.println(super.getTankTexture());
         batch.draw(super.getTankTexture(), position.x, position.y);
     }
 
