@@ -22,3 +22,5 @@ public class Tank2 extends Tank {
         batch.draw(tankTexture, position.x, position.y);
     }
 }
+
+

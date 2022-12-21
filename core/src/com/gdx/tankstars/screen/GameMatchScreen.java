@@ -1,6 +1,7 @@
 package com.gdx.tankstars.screen;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -46,7 +47,26 @@ public class GameMatchScreen extends State implements Screen {
                 game.setScreen(new GamePauseScreen(game));
             }
 
+        };
+
+
+
+        float speed = gameMatch.getTank1().getSpeed();
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            System.out.println("Press left");
         }
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            System.out.println("Press Right");
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+            System.out.println("Press Up");
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+            System.out.println("Press Down");
+        }
+
+
+
 
         game.getBatch().begin();
         game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);

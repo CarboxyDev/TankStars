@@ -7,11 +7,28 @@ import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
 
 public abstract class Tank extends Sprite {
+
     private float speed = 5.0f;
     private float rotationSpeed = 85.0f;
     private int health = 100;
     private int fuel = 100;
+    private int type;
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
 
 
 
@@ -47,6 +64,8 @@ public abstract class Tank extends Sprite {
     public void setHealth(int health) {
         this.health = health;
     }
+
+
 
 
     public abstract void draw(SpriteBatch batch);
