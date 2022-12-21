@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.gdx.tankstars.TankStarsGame;
 import com.gdx.tankstars.game.GameMatch;
+import com.gdx.tankstars.game.TerrainGenerator;
 
 public class GameMatchScreen implements Screen {
 
