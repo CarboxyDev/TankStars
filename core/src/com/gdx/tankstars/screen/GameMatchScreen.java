@@ -20,7 +20,7 @@ public class GameMatchScreen implements Screen {
 
     @Override
     public void show() {
-        backgroundTexture = new Texture(Gdx.files.internal("background.png"));
+        //backgroundTexture = new Texture(Gdx.files.internal("background.png"));
         GameMatch gameMatch = new GameMatch(game);
         gameMatch.start();
     }
@@ -28,7 +28,7 @@ public class GameMatchScreen implements Screen {
     @Override
     public void render(float delta) {
         game.getBatch().begin();
-        game.getBatch().draw(backgroundTexture, 0, 0);
+        //game.getBatch().draw(backgroundTexture, 0, 0);
         game.getBatch().end();
     }
 

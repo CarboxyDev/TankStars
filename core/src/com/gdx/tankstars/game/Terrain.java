@@ -15,10 +15,10 @@ import java.util.List;
 
 public class Terrain extends ShapeRenderer {
 
-    private Camera camera;
+    //private Camera camera;
 
     public Terrain(Camera camera) {
-        this.camera = camera;
+        //this.camera = camera;
     }
 
 
@@ -86,8 +86,8 @@ public class Terrain extends ShapeRenderer {
 
         ModelInstance modelInstance = new ModelInstance(model);
         System.out.println("ModelInstance created");
-
-        modelBatch.begin(this.camera);
+        Camera camera = new Camera();
+        modelBatch.begin(camera);
         modelBatch.render(modelInstance);
         modelBatch.end();
 

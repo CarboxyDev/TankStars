@@ -21,7 +21,7 @@ public class GameMatch {
         Terrain terrain = new Terrain(camera);
         terrain.generate();
         //this.tank = new Tank(new Texture(Gdx.files.internal("tanks/frostbite.png")));
-        this.drawAssets();
+        //this.drawAssets();
     };
 
     public void drawAssets() {
