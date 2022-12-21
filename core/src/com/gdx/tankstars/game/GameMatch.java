@@ -1,9 +1,11 @@
 package com.gdx.tankstars.game;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdx.tankstars.TankStarsGame;
 
-public class GameMatch {
+public class GameMatch extends State {
     private TankStarsGame game;
 
     public Tank getTank() {
@@ -14,6 +16,7 @@ public class GameMatch {
 
 
     public GameMatch(TankStarsGame game) {
+        super(game);
         this.game = game;
         this.tank = new Tank1();
     }
@@ -24,7 +27,7 @@ public class GameMatch {
         //game.setScreen(terrainGenerator);
 
         //this.tank = new Tank(new Texture(Gdx.files.internal("tanks/frostbite.png")));
-        //this.drawAssets();
+        this.drawAssets();
     };
 
     public void drawAssets() {

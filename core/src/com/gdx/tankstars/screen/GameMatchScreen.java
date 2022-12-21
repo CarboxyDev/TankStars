@@ -29,7 +29,6 @@ public class GameMatchScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        System.out.println("YYY");
         game.getBatch().begin();
         game.getBatch().draw(backgroundTexture, 0, 0);
         //gameMatch.drawAssets();
