@@ -6,6 +6,7 @@ import com.gdx.tankstars.game.TempScreen;
 import com.gdx.tankstars.game.TerrainGenerator;
 import com.gdx.tankstars.game.TerrainGenerator_1;
 import com.gdx.tankstars.screen.GameMatchScreen;
+import com.gdx.tankstars.screen.StartScreen;
 
 public class TankStarsGame extends Game {
 
