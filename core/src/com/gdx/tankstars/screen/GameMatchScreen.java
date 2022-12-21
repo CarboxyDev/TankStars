@@ -8,9 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
-import com.gdx.tankstars.game.GameMatch;
-import com.gdx.tankstars.game.State;
-import com.gdx.tankstars.game.TerrainGenerator;
+import com.gdx.tankstars.game.*;
 
 public class GameMatchScreen extends State implements Screen {
     private TankStarsGame game;
@@ -18,11 +16,16 @@ public class GameMatchScreen extends State implements Screen {
     private Texture backgroundTexture;
     private final Rectangle pauseButton = new Rectangle(1212, 25, 45, 45);
     GameMatch gameMatch;
+    Tank tank1;
+    Tank tank2;
 
     public GameMatchScreen(TankStarsGame game) {
         super(game);
         this.game = game;
         shapeRenderer = new ShapeRenderer();
+        gameMatch = new GameMatch(game);
+        this.tank1 = gameMatch.getTank1();
+        this.tank2 = gameMatch.getTank2();
         System.out.println("Player 1 -> Tank " + game.getPlayer1());
         System.out.println("Player 2 -> Tank " + game.getPlayer2());
     }
@@ -31,7 +34,6 @@ public class GameMatchScreen extends State implements Screen {
     @Override
     public void show() {
         backgroundTexture = new Texture(Gdx.files.internal("background-2.png"));
-        gameMatch = new GameMatch(game);
         //gameMatch.start();
     }
 
@@ -53,18 +55,20 @@ public class GameMatchScreen extends State implements Screen {
 
 
         float speed = gameMatch.getTank1().getSpeed();
-        Vector2 tank1Pos = gameMatch.getTank1().getPosition();
-        Vector2 tank2Pos = gameMatch.getTank2().getPosition();
+        Vector2 tank1Pos = tank1.getPosition();
+        Vector2 tank2Pos = tank2.getPosition();
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             System.out.println("Press left");
-            if (super.getTurn() == 1) {
-                gameMatch.getTank1().setPosition(new Vector2(tank1Pos.x - speed, tank1Pos.y));
+            if (super.getTurn() == 1 && tank1.getFuel() > 0) {
+                tank1.setPosition(new Vector2(tank1Pos.x - speed, tank1Pos.y));
+                tank1.burnFuel();
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             System.out.println("Press Right");
-            if (super.getTurn() == 1) {
+            if (super.getTurn() == 1 && tank1.getFuel() > 0) {
                 gameMatch.getTank1().setPosition(new Vector2(tank1Pos.x + speed, tank1Pos.y));
+                tank1.burnFuel();
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
@@ -119,11 +123,20 @@ public class GameMatchScreen extends State implements Screen {
         shapeRenderer.rect( 100, 50, 150, 30);
         shapeRenderer.end();
 
+        int fuel = 100;
+        if (super.getTurn() == 1) {
+            fuel = tank1.getFuel();
+        }
+        else if (super.getTurn() == 2) {
+            fuel = tank2.getFuel();
+        }
+
+        float fuelMeterWidth = 150 * (float) fuel / 100;
 
         // Fuel Meter (variable width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(248 / 255.0f, 193 / 255.0f, 47 / 255.0f, 1);
-        shapeRenderer.rect( 100, 50, 150, 30);
+        shapeRenderer.rect( 100, 50, fuelMeterWidth, 30);
         shapeRenderer.end();
 
 

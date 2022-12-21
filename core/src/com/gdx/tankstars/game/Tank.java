@@ -15,6 +15,10 @@ public abstract class Tank extends Sprite {
     private int type;
     private Vector2 position;
 
+    public void burnFuel() {
+        fuel--;
+    }
+
     public int getType() {
         return type;
     }
@@ -31,15 +35,12 @@ public abstract class Tank extends Sprite {
         this.speed = speed;
     }
 
-
     public Vector2 getPosition() {
         return position;
     }
 
     public void setPosition(Vector2 position) {
-        if (position.x > 5) {
-            this.position = position;
-        }
+        if (position.x > 5) {this.position = position;}
     }
 
 
@@ -75,7 +76,9 @@ public abstract class Tank extends Sprite {
     }
 
 
-
-
     public abstract void draw(SpriteBatch batch);
+
+    public int getFuel() {
+        return fuel;
+    }
 }
