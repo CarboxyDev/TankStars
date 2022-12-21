@@ -11,14 +11,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector3;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Terrain extends ShapeRenderer {
-
-    private Camera camera;
-
-    public Terrain(Camera camera) {
-        this.camera = camera;
+public class TerrainAlt extends ShapeRenderer {
+    public TerrainAlt() {
     }
 
 
@@ -27,7 +22,7 @@ public class Terrain extends ShapeRenderer {
 
 
     public void generate() {
-        TerrainGenerator generator = new TerrainGenerator();
+        TerrainGeneratorAlt generator = new TerrainGeneratorAlt();
         double[][] terrain = generator.generateTerrain();
         System.out.println(terrain);
 
@@ -39,15 +34,15 @@ public class Terrain extends ShapeRenderer {
         ArrayList<Vector3> vertices = new ArrayList<Vector3>();
         ArrayList<Short> indices = new ArrayList<Short>();
 
-        for (int x = 0; x < TerrainGenerator.TERRAIN_WIDTH - 1; x++) {
-            for (int y = 0; y < TerrainGenerator.TERRAIN_HEIGHT - 1; y++) {
+        for (int x = 0; x < TerrainGeneratorAlt.TERRAIN_WIDTH - 1; x++) {
+            for (int y = 0; y < TerrainGeneratorAlt.TERRAIN_HEIGHT - 1; y++) {
                 vertices.add(new Vector3(x, (float) terrain[x][y], y));
                 vertices.add(new Vector3(x, (float) terrain[x][y + 1], y + 1));
                 vertices.add(new Vector3(x + 1, (float) terrain[x + 1][y + 1], y + 1));
                 vertices.add(new Vector3(x + 1, (float) terrain[x + 1][y], y));
 
                 // Add the indices for the current quad
-                short offset = (short)(x * TerrainGenerator.TERRAIN_HEIGHT + y);
+                short offset = (short)(x * TerrainGeneratorAlt.TERRAIN_HEIGHT + y);
                 indices.add(offset);
                 indices.add((short)(offset + 1));
                 indices.add((short)(offset + 2));
@@ -86,8 +81,8 @@ public class Terrain extends ShapeRenderer {
 
         ModelInstance modelInstance = new ModelInstance(model);
         System.out.println("ModelInstance created");
-
-        modelBatch.begin(this.camera);
+        Camera camera = new Camera();
+        modelBatch.begin(camera);
         modelBatch.render(modelInstance);
         modelBatch.end();
 
