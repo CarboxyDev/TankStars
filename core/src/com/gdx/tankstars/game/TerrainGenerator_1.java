@@ -25,7 +25,7 @@ public class TerrainGenerator_1 implements Screen {
         world = new World(new Vector2(0, -9.81f), true);
 
         // Define the Bezier curve
-        bezierCurve = new Bezier<>(new Vector2(100, 100), new Vector2(200, 50), new Vector2(300, 150), new Vector2(400, 100));
+        bezierCurve = new Bezier<>(new Vector2(0, 200), new Vector2(400, 400), new Vector2(800, 150), new Vector2(1280, 420));
 
         // Set up the physics body
         BodyDef bodyDef = new BodyDef();
