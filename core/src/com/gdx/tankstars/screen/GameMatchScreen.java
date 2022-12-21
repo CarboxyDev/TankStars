@@ -7,9 +7,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.gdx.tankstars.TankStarsGame;
 import com.gdx.tankstars.game.GameMatch;
+import com.gdx.tankstars.game.State;
 import com.gdx.tankstars.game.TerrainGenerator;
 
-public class GameMatchScreen implements Screen {
+public class GameMatchScreen extends State implements Screen {
     private TankStarsGame game;
     private ShapeRenderer shapeRenderer;
     private Texture backgroundTexture;
@@ -17,6 +18,7 @@ public class GameMatchScreen implements Screen {
     GameMatch gameMatch;
 
     public GameMatchScreen(TankStarsGame game) {
+        super(game);
         this.game = game;
         shapeRenderer = new ShapeRenderer();
         System.out.println("Player 1 -> Tank " + game.getPlayer1());
@@ -48,8 +50,13 @@ public class GameMatchScreen implements Screen {
 
         game.getBatch().begin();
         game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);
-        game.getBatch().draw(new Texture(Gdx.files.internal("turn-1.png")), 550, 600, 215, 130);
-        //game.getBatch().draw(new Texture(Gdx.files.internal("turn-2.png")), 550, 600, 215, 130);
+        if (super.getTurn() == 1) {
+            game.getBatch().draw(new Texture(Gdx.files.internal("turn-1.png")), 550, 600, 215, 130);
+        }
+        else if (super.getTurn() == 2) {
+            game.getBatch().draw(new Texture(Gdx.files.internal("turn-2.png")), 550, 600, 215, 130);
+        }
+
         //gameMatch.drawAssets();
         game.getBatch().end();
 

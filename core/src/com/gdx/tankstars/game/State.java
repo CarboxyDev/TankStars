@@ -13,6 +13,11 @@ public class State {
 
     public State(TankStarsGame game) {
         this.game = game;
+        this.turn = 1;
+    }
+
+    public int getTurn() {
+        return this.turn;
     }
 
     public void changeTurn() {
