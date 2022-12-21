@@ -3,6 +3,7 @@ package com.gdx.tankstars.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
 
 public class GameMatch extends State {
@@ -23,8 +24,8 @@ public class GameMatch extends State {
     public GameMatch(TankStarsGame game) {
         super(game);
         this.game = game;
-        this.tank1 = new Tank1();
-        this.tank2 = new Tank2();
+        this.tank1 = new Tank1(new Vector2(100, 100));
+        this.tank2 = new Tank2(new Vector2(1100, 100));
 
     }
 
