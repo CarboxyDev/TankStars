@@ -59,16 +59,20 @@ public class GameMatchScreen extends State implements Screen {
         Vector2 tank2Pos = tank2.getPosition();
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             System.out.println("Press left");
-            if (super.getTurn() == 1 && tank1.getFuel() > 0) {
+            if (super.getTurn() == 1) {
                 tank1.setPosition(new Vector2(tank1Pos.x - speed, tank1Pos.y));
-                tank1.burnFuel();
+            }
+            else if (super.getTurn() == 2) {
+                tank2.setPosition(new Vector2(tank2Pos.x - speed, tank2Pos.y));
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             System.out.println("Press Right");
-            if (super.getTurn() == 1 && tank1.getFuel() > 0) {
-                gameMatch.getTank1().setPosition(new Vector2(tank1Pos.x + speed, tank1Pos.y));
-                tank1.burnFuel();
+            if (super.getTurn() == 1) {
+                tank1.setPosition(new Vector2(tank1Pos.x + speed, tank1Pos.y));
+            }
+            else if (super.getTurn() == 2) {
+                tank2.setPosition(new Vector2(tank2Pos.x + speed, tank2Pos.y));
             }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
@@ -132,12 +136,17 @@ public class GameMatchScreen extends State implements Screen {
         }
 
         float fuelMeterWidth = 150 * (float) fuel / 100;
+        // remove the if statement below when not in development
+        if (fuelMeterWidth == 0) {
+            super.changeTurn();
+        }
 
         // Fuel Meter (variable width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(248 / 255.0f, 193 / 255.0f, 47 / 255.0f, 1);
         shapeRenderer.rect( 100, 50, fuelMeterWidth, 30);
         shapeRenderer.end();
+
 
 
     }
