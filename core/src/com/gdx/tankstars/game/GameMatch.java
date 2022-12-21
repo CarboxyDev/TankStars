@@ -20,8 +20,8 @@ public class GameMatch {
 
     public void start() {
         System.out.println("Game has been started.");
-        TerrainGenerator terrainGenerator = new TerrainGenerator(game);
-        game.setScreen(terrainGenerator);
+        //TerrainGenerator terrainGenerator = new TerrainGenerator(game);
+        //game.setScreen(terrainGenerator);
 
         //this.tank = new Tank(new Texture(Gdx.files.internal("tanks/frostbite.png")));
         //this.drawAssets();
