@@ -2,6 +2,7 @@ package com.gdx.tankstars.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Bezier;
 import com.badlogic.gdx.math.Rectangle;
@@ -104,7 +105,18 @@ public class TerrainGenerator implements Screen {
         shapeRenderer.rect( Gdx.graphics.getWidth() - (120 + 200), Gdx.graphics.getHeight() - 73, 200, 30);
         shapeRenderer.end();
 
+        // Fuel Meter (100% width)
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setColor(210 / 255.0f, 210 / 255.0f, 210 / 255.0f, 1);
+        shapeRenderer.rect( 100, 50, 150, 30);
+        shapeRenderer.end();
 
+
+        // Fuel Meter (variable width)
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setColor(248 / 255.0f, 193 / 255.0f, 47 / 255.0f, 1);
+        shapeRenderer.rect( 100, 50, 150, 30);
+        shapeRenderer.end();
 
         world.step(Gdx.graphics.getDeltaTime(), 6, 2);
 

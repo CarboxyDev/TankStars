@@ -29,7 +29,8 @@ public class TankStarsGame extends Game {
 
     //this.setScreen(new TerrainGenerator_1());
     //this.setScreen(new StartScreen(this));
-    this.setScreen(new TempScreen());
+    //this.setScreen(new TempScreen());
+    this.setScreen(new GameMatchScreen((this)));
 
   }
 
