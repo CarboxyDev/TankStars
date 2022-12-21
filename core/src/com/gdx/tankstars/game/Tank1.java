@@ -11,6 +11,9 @@ public class Tank1 extends Tank {
 
 
 
+
+
+
     public Tank1(Vector2 position) {
         super();
         this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_left.png"));

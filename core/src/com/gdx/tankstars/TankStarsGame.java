@@ -3,6 +3,7 @@ package com.gdx.tankstars;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdx.tankstars.game.TerrainGenerator;
+import com.gdx.tankstars.game.bullets.GameMatchScreenD;
 import com.gdx.tankstars.screen.GameMatchScreen;
 import com.gdx.tankstars.screen.StartScreen;
 
@@ -29,7 +30,8 @@ public class TankStarsGame extends Game {
     //this.setScreen(new TerrainGenerator_1());
     //this.setScreen(new StartScreen(this));
     //this.setScreen(new TempScreen());
-    this.setScreen(new GameMatchScreen((this)));
+//    this.setScreen(new GameMatchScreen((this)));
+    this.setScreen(new GameMatchScreenD((this)));
 
   }
 

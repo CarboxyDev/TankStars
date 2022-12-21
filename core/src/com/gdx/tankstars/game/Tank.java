@@ -80,6 +80,7 @@ public abstract class Tank extends Sprite {
     }
 
 
+
     public abstract void draw(SpriteBatch batch);
 
     public int getFuel() {
