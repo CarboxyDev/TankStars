@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.gdx.tankstars.TankStarsGame;
 
-import java.awt.*;
-
 public class GamePauseScreen implements Screen {
     private TankStarsGame game;
     private Texture pauseScreenTexture;
@@ -33,7 +31,7 @@ public class GamePauseScreen implements Screen {
 
             if (buttonResume.contains(x, y)) {
                 System.out.println("Press resume button");
-                game.setScreen(new GameMatchScreen(game));
+                game.setScreen(new GameMatchScreenStatic(game));
                 this.dispose();
             }
             else if (buttonSave.contains(x, y)) {
