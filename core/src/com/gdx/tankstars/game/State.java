@@ -8,8 +8,8 @@ import com.gdx.tankstars.TankStarsGame;
 public class State {
     private TankStarsGame game;
     private int turn; // 1 for player 1, 2 for player 2
-    private Player1 player1;
-    private Player2 player2;
+    private Tank1 tank1;
+    private Tank2 tank2;
 
     public State(TankStarsGame game) {
         this.game = game;

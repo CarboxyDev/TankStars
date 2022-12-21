@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
 
+import java.util.Random;
+
 public class GameMatch extends State {
     private TankStarsGame game;
     private Tank tank1;
@@ -26,6 +28,17 @@ public class GameMatch extends State {
         this.game = game;
         this.tank1 = new Tank1(new Vector2(100, 200));
         this.tank2 = new Tank2(new Vector2(1100, 200));
+        int t1 = game.getPlayer1();
+        int t2 = game.getPlayer2();
+        Random r = new Random();
+        if (t1 == 0) {
+            t1 = r.nextInt(3 - 1 + 1) + 1;
+        }
+        if (t2 == 0) {
+            t2 = r.nextInt(3 - 1 + 1) + 1;
+        }
+        tank1.setType(t1);
+        tank2.setType(t2);
 
     }
 

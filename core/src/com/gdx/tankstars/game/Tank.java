@@ -25,6 +25,7 @@ public abstract class Tank extends Sprite {
 
     public void setType(int type) {
         this.type = type;
+        System.out.println("Changed tank type to " + type);
     }
 
     public float getSpeed() {
