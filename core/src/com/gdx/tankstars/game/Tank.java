@@ -38,16 +38,26 @@ public abstract class Tank extends Sprite {
         String texturePath = "";
         if (type == 1) {
             texturePath = "tanks/blaze_left.png";
+            if (player == 2) {
+                texturePath = "tanks/blaze_right.png";
+            }
         }
         if (type == 2) {
             texturePath = "tanks/frostbite_left.png";
+            if (player == 2) {
+                texturePath = "tanks/frostbite_right.png";
+            }
         }
         if (type == 3) {
             texturePath = "tanks/beast_left.png";
+            if (player == 2) {
+                texturePath = "tanks/beast_right.png";
+            }
         };
 
         this.tankTexture = new Texture(Gdx.files.internal(texturePath));
-        System.out.println("Changed tank type to " + type);
+
+        System.out.println("Changed tank " + player + " to type " + type);
     }
 
     public float getSpeed() {

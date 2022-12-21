@@ -15,6 +15,8 @@ public class GameMatch extends State {
     private Tank tank2;
 
     private BulletDuplicate bullet;
+
+
     public Tank getTank2() {
         return tank2;
     }
@@ -22,8 +24,6 @@ public class GameMatch extends State {
     public Tank getTank1() {
         return tank1;
     }
-
-
 
     public GameMatch(TankStarsGame game) {
         super(game);
@@ -49,10 +49,6 @@ public class GameMatch extends State {
 
     public void start() {
         System.out.println("Game has been started.");
-        //TerrainGenerator terrainGenerator = new TerrainGenerator(game);
-        //game.setScreen(terrainGenerator);
-
-        //this.tank = new Tank(new Texture(Gdx.files.internal("tanks/frostbite.png")));
         this.drawAssets();
     };
 

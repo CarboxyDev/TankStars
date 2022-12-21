@@ -19,7 +19,6 @@ public class Tank1 extends Tank {
     @Override
     public void draw(SpriteBatch batch) {
         Vector2 position = this.getPosition();
-        System.out.println(super.getTankTexture());
         batch.draw(super.getTankTexture(), position.x, position.y);
     }
 
