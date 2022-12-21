@@ -24,8 +24,8 @@ public class TankStarsGame extends Game {
   @Override
   public void create() {
     batch = new SpriteBatch();
-    //this.setScreen(new TerrainGenerator_1());
-    this.setScreen(new StartScreen(this));
+    this.setScreen(new TerrainGenerator_1());
+    //this.setScreen(new StartScreen(this));
   }
 
   @Override

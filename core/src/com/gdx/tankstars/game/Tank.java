@@ -7,10 +7,8 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Tank extends Sprite {
     private float speed = 5.0f;
     private float rotationSpeed = 85.0f;
+    private int health = 100;
 
-    public Tank(Texture texture) {
-        super(texture);
-    }
 
     public void move(float deltaTime) {
         translate(getVelocity().x * deltaTime, getVelocity().y * deltaTime);
@@ -35,5 +33,12 @@ public abstract class Tank extends Sprite {
         rotate(angle);
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
 }
