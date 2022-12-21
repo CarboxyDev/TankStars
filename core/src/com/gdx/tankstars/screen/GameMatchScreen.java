@@ -26,8 +26,18 @@ public class GameMatchScreen extends State implements Screen {
         gameMatch = new GameMatch(game);
         this.tank1 = gameMatch.getTank1();
         this.tank2 = gameMatch.getTank2();
-        System.out.println("Player 1 -> Tank " + game.getPlayer1());
-        System.out.println("Player 2 -> Tank " + game.getPlayer2());
+        game.setGameMatchData(gameMatch);
+        game.setStateData(super.getState());
+    };
+
+    public GameMatchScreen(TankStarsGame game, int calledByPause) {
+        super(game, 1);
+        this.game = game;
+        shapeRenderer = new ShapeRenderer();
+        gameMatch = game.getGameMatchData();
+        this.tank1 = gameMatch.getTank1();
+        this.tank2 = gameMatch.getTank2();
+
     }
 
 

@@ -31,7 +31,7 @@ public class GamePauseScreen implements Screen {
 
             if (buttonResume.contains(x, y)) {
                 System.out.println("Press resume button");
-                game.setScreen(new GameMatchScreen(game));
+                game.setScreen(new GameMatchScreen(game, 1));
                 this.dispose();
             }
             else if (buttonSave.contains(x, y)) {

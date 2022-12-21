@@ -6,11 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 public class Tank1 extends Tank {
-
     Texture tankTexture;
-
-
-
 
 
 
@@ -24,7 +20,7 @@ public class Tank1 extends Tank {
     @Override
     public void draw(SpriteBatch batch) {
         Vector2 position = this.getPosition();
-        batch.draw(tankTexture, position.x, position.y);
+        batch.draw(super.getTankTexture(), position.x, position.y);
     }
 
 

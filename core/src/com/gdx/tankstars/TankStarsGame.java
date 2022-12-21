@@ -2,6 +2,8 @@ package com.gdx.tankstars;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.gdx.tankstars.game.GameMatch;
+import com.gdx.tankstars.game.State;
 import com.gdx.tankstars.game.TerrainGenerator;
 import com.gdx.tankstars.game.bullets.GameMatchScreenD;
 import com.gdx.tankstars.screen.GameMatchScreen;
@@ -22,6 +24,16 @@ public class TankStarsGame extends Game {
 
   private int player1;
   private int player2;
+  private GameMatch gameMatchData;
+  private State stateData;
+
+  public GameMatch getGameMatchData() {
+    return gameMatchData;
+  }
+
+  public void setGameMatchData(GameMatch gameMatchData) {
+    this.gameMatchData = gameMatchData;
+  }
 
   @Override
   public void create() {
@@ -62,4 +74,11 @@ public class TankStarsGame extends Game {
   }
 
 
+  public State getStateData() {
+    return stateData;
+  }
+
+  public void setStateData(State stateData) {
+    this.stateData = stateData;
+  }
 }

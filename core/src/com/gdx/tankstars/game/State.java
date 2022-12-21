@@ -16,6 +16,15 @@ public class State {
         this.turn = 1;
     }
 
+    public State(TankStarsGame game, int calledByPause) {
+        this.game = game;
+        this.turn = game.getStateData().getTurn();
+    }
+
+    public State getState() {
+        return this;
+    }
+
     public int getTurn() {
         return this.turn;
     }

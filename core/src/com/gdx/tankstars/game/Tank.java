@@ -13,10 +13,21 @@ public abstract class Tank extends Sprite {
     private int health = 100;
     private int fuel = 100;
     private int type;
+    private int player;
     private Vector2 position;
+
+
+
+    private Texture tankTexture;
 
     public void burnFuel() {
         fuel--;
+    }
+
+    public int getPlayer() {return player;}
+
+    public void setPlayer(int player) {
+        this.player = player;
     }
 
     public int getType() {
@@ -25,6 +36,17 @@ public abstract class Tank extends Sprite {
 
     public void setType(int type) {
         this.type = type;
+        String texturePath = "";
+        if (type == 1) {
+            texturePath = "tanks/blaze.png";
+        }
+        if (type == 2) {
+            texturePath = "tanks/frostbite.png";
+        }
+        if (type == 3) {
+            texturePath = "tanks/beast.png";
+        }
+        this.tankTexture = new Texture(texturePath);
         System.out.println("Changed tank type to " + type);
     }
 
@@ -34,6 +56,14 @@ public abstract class Tank extends Sprite {
 
     public void setSpeed(float speed) {
         this.speed = speed;
+    }
+
+    public Texture getTankTexture() {
+        return tankTexture;
+    }
+
+    public void setTankTexture(Texture tankTexture) {
+        this.tankTexture = tankTexture;
     }
 
     public Vector2 getPosition() {
