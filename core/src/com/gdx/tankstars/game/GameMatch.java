@@ -7,18 +7,25 @@ import com.gdx.tankstars.TankStarsGame;
 
 public class GameMatch extends State {
     private TankStarsGame game;
+    private Tank tank1;
+    private Tank tank2;
 
-    public Tank getTank() {
-        return tank;
+    public Tank getTank2() {
+        return tank2;
     }
 
-    private Tank tank;
+    public Tank getTank1() {
+        return tank1;
+    }
+
 
 
     public GameMatch(TankStarsGame game) {
         super(game);
         this.game = game;
-        this.tank = new Tank1();
+        this.tank1 = new Tank1();
+        this.tank2 = new Tank2();
+
     }
 
     public void start() {
@@ -33,7 +40,8 @@ public class GameMatch extends State {
     public void drawAssets() {
 
 //        game.getBatch().draw(tank, tank.getX(), tank.getY(), tank.getOriginX(), tank.getOriginY(), tank.getWidth(), tank.getHeight(), tank.getScaleX(), tank.getScaleY(), tank.getRotation());
-        tank.draw(game.getBatch());
+        tank1.draw(game.getBatch());
+        tank2.draw(game.getBatch());
 
     }
 

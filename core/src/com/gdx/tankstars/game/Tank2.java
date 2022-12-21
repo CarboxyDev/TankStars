@@ -5,15 +5,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Tank1 extends Tank {
+public class Tank2 extends Tank {
 
     private Vector2 position;
     Texture tankTexture;
 
-    public Tank1( ) {
+    public Tank2( ) {
         super();
-         this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_left.png"));
-         this.position = new Vector2(100, 100);
+        this.tankTexture = new Texture(Gdx.files.internal("tanks/blaze_right.png"));
+        this.position = new Vector2(1100, 100);
 
     }
 
