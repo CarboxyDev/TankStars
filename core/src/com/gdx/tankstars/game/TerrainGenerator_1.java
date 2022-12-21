@@ -14,6 +14,8 @@ public class TerrainGenerator_1 implements Screen {
     ShapeRenderer shapeRenderer;
     World world;
     Body body;
+
+    Body mover;
     Bezier<Vector2> bezierCurve;
     Box2DDebugRenderer debugRenderer;
 
@@ -45,6 +47,18 @@ public class TerrainGenerator_1 implements Screen {
         fixtureDef.restitution = 0.5f;
         body = world.createBody(bodyDef);
         body.createFixture(fixtureDef);
+
+        BodyDef moverDef = new BodyDef();
+        moverDef.type = BodyDef.BodyType.DynamicBody;
+        moverDef.position.set(100, 100);
+        CircleShape moverShape = new CircleShape();
+        shape.setRadius(10);
+        FixtureDef moverfixtureDef = new FixtureDef();
+        moverfixtureDef.density = 1.0f;
+        moverfixtureDef.friction = 0.5f;
+        moverfixtureDef.restitution = 0.5f;
+        mover = world.createBody(bodyDef);
+        mover.createFixture(fixtureDef);
         debugRenderer = new Box2DDebugRenderer();
 
 
