@@ -13,6 +13,9 @@ public class Camera extends com.badlogic.gdx.graphics.Camera {
     public Camera() {
         camera.position.set(screenWidth / 2, screenHeight / 2, 0);
         camera.update();
+        //camera.zoom = 0.25f;
+        //camera.update();
+
 
         SpriteBatch batch = new SpriteBatch();
         batch.setProjectionMatrix(camera.combined);

@@ -13,6 +13,8 @@ public class GameMatchScreen implements Screen {
 
     public GameMatchScreen(TankStarsGame game) {
         this.game = game;
+        System.out.println("Player 1 -> Tank " + game.getPlayer1());
+        System.out.println("Player 2 -> Tank " + game.getPlayer2());
     }
 
 

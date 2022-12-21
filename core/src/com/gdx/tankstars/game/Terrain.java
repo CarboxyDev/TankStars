@@ -72,18 +72,20 @@ public class Terrain extends ShapeRenderer {
 
 
         Mesh mesh = new Mesh(true, vertices.size(), indices.size(), new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"));
-
+        System.out.println("Mesh created");
 
         mesh.setVertices(verticesArray);
         mesh.setIndices(indicesArray);
 
 
         ModelBuilder modelBuilder = new ModelBuilder();
+        System.out.println("ModelBuilder created");
         modelBuilder.begin();
         modelBuilder.part("part1", mesh, GL20.GL_TRIANGLES, material);
         Model model = modelBuilder.end();
 
         ModelInstance modelInstance = new ModelInstance(model);
+        System.out.println("ModelInstance created");
 
         modelBatch.begin(this.camera);
         modelBatch.render(modelInstance);
@@ -93,7 +95,7 @@ public class Terrain extends ShapeRenderer {
 
 
 
-
+        System.out.println("Reached end of Terrain.generate()");
     }
 
 }

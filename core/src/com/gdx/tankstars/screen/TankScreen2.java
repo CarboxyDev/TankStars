@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.gdx.tankstars.TankStarsGame;
 
-public class TankScreen implements Screen  {
+public class TankScreen2 implements Screen  {
 
     private final TankStarsGame game;
     private Texture tankScreen;
@@ -19,7 +19,7 @@ public class TankScreen implements Screen  {
     private final Rectangle tank3_rect = new Rectangle(1126, 302, 118, 118);
     private final Rectangle buttonStart_rect = new Rectangle(914, 541, 1163 - 914, 620 - 541);
 
-    public TankScreen(TankStarsGame game, String screenPath, int player) {
+    public TankScreen2(TankStarsGame game, String screenPath, int player) {
         this.game = game;
         this.screenPath = screenPath;
         this.player = player;
@@ -48,23 +48,23 @@ public class TankScreen implements Screen  {
 
             if (tank1_rect.contains(x, y)) {
                 System.out.println("Select tank 1");
-                game.setScreen(new BlazeTankScreen(game, 1));
+                game.setScreen(new BlazeTankScreenP2(game, 1));
                 this.dispose();
             }
             else if (tank2_rect.contains(x, y)) {
                 System.out.println("Select tank 2");
-                game.setScreen(new FrostbiteTankScreen(game, 2));
+                game.setScreen(new FrostbiteTankScreenP2(game, 2));
                 this.dispose();
             }
             else if (tank3_rect.contains(x, y)) {
                 System.out.println("Select tank 3");
-                game.setScreen(new BeastTankScreen(game, 3));
+                game.setScreen(new BeastTankScreenP2(game, 3));
                 this.dispose();
             }
             else if (buttonStart_rect.contains(x, y)) {
-                System.out.println("Goto Player 2");
-                game.setPlayer1(this.player);
-                game.setScreen(new BlazeTankScreenP2(game, 1));
+                System.out.println("Start button");
+                game.setPlayer2(this.player);
+                game.setScreen(new GameMatchScreen(game));
                 this.dispose();
             }
             else {

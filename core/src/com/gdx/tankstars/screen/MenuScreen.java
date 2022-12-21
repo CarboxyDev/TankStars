@@ -36,7 +36,7 @@ public class MenuScreen implements Screen {
             int y = Gdx.input.getY();
 
             if (button1_rect.contains(x, y)) {
-                game.setScreen(new BlazeTankScreen(game));
+                game.setScreen(new BlazeTankScreen(game, 1));
                 this.dispose();
             }
         }
