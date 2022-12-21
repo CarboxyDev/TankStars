@@ -6,6 +6,6 @@ import com.badlogic.gdx.graphics.Texture;
 public class Tank1 extends Tank {
 
     public Tank1() {
-        super(new Texture(Gdx.files.internal("tanks/blaze.png")));
+         Texture texture = new Texture(Gdx.files.internal("tanks/blaze.png"));
     }
 }

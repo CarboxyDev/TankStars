@@ -63,7 +63,7 @@ public class TerrainGenerator_1 implements Screen {
 
         // Render the Bezier curve using ShapeRenderer
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(1, 1, 1, 1);
+        shapeRenderer.setColor(65, 44, 44, 1);
         Vector2 prev = bezierCurve.valueAt(new Vector2(), 0);
         for (float t = 0; t <= 1; t += 0.01f) {
             Vector2 curr = bezierCurve.valueAt(new Vector2(), t);
