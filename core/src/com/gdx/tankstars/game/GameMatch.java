@@ -17,6 +17,9 @@ public class GameMatch {
 
     public void start() {
         System.out.println("Game has been started.");
+        Camera camera = new Camera();
+        Terrain terrain = new Terrain(camera);
+        terrain.generate();
         this.tank = new Tank(new Texture(Gdx.files.internal("tanks/frostbite.png")));
         this.drawAssets();
     };
