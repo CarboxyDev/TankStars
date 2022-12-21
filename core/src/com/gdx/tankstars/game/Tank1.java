@@ -2,10 +2,24 @@ package com.gdx.tankstars.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 public class Tank1 extends Tank {
 
-    public Tank1() {
-         Texture texture = new Texture(Gdx.files.internal("tanks/blaze.png"));
+    private Vector2 position;
+    Texture tankTexture;
+
+    public Tank1( ) {
+        super();
+         this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_1.png"));
+         this.position = new Vector2(100, 100);
+
+    }
+
+    @Override
+    public void draw(SpriteBatch batch) {
+        System.out.println("Entered");
+        batch.draw(tankTexture, position.x, position.y);
     }
 }

@@ -2,13 +2,19 @@ package com.gdx.tankstars.game;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.gdx.tankstars.TankStarsGame;
 
 public abstract class Tank extends Sprite {
     private float speed = 5.0f;
     private float rotationSpeed = 85.0f;
     private int health = 100;
     private int fuel = 100;
+
+
+
+
 
 
     public void move(float deltaTime) {
@@ -42,4 +48,6 @@ public abstract class Tank extends Sprite {
         this.health = health;
     }
 
+
+    public abstract void draw(SpriteBatch batch);
 }

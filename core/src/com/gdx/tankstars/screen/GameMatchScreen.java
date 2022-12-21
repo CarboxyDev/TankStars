@@ -11,6 +11,7 @@ public class GameMatchScreen implements Screen {
 
     private TankStarsGame game;
     private Texture backgroundTexture;
+    GameMatch gameMatch;
 
     public GameMatchScreen(TankStarsGame game) {
         this.game = game;
@@ -22,15 +23,18 @@ public class GameMatchScreen implements Screen {
     @Override
     public void show() {
         //backgroundTexture = new Texture(Gdx.files.internal("background.png"));
-        GameMatch gameMatch = new GameMatch(game);
+        gameMatch = new GameMatch(game);
         gameMatch.start();
     }
 
     @Override
     public void render(float delta) {
+        System.out.println("YYY");
         game.getBatch().begin();
         //game.getBatch().draw(backgroundTexture, 0, 0);
+        gameMatch.drawAssets();
         game.getBatch().end();
+
     }
 
     @Override
