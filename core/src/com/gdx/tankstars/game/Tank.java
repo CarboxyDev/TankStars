@@ -8,7 +8,7 @@ import com.gdx.tankstars.TankStarsGame;
 
 public abstract class Tank extends Sprite {
 
-    private float speed = 5.0f;
+    private float speed = 1.0f;
     private float rotationSpeed = 85.0f;
     private int health = 100;
     private int fuel = 100;
@@ -37,7 +37,9 @@ public abstract class Tank extends Sprite {
     }
 
     public void setPosition(Vector2 position) {
-        this.position = position;
+        if (position.x > 5) {
+            this.position = position;
+        }
     }
 
 

@@ -24,8 +24,8 @@ public class GameMatch extends State {
     public GameMatch(TankStarsGame game) {
         super(game);
         this.game = game;
-        this.tank1 = new Tank1(new Vector2(100, 100));
-        this.tank2 = new Tank2(new Vector2(1100, 100));
+        this.tank1 = new Tank1(new Vector2(100, 200));
+        this.tank2 = new Tank2(new Vector2(1100, 200));
 
     }
 

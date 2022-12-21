@@ -63,6 +63,9 @@ public class GameMatchScreen extends State implements Screen {
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             System.out.println("Press Right");
+            if (super.getTurn() == 1) {
+                gameMatch.getTank1().setPosition(new Vector2(tank1Pos.x + speed, tank1Pos.y));
+            }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
             System.out.println("Press Up");
@@ -75,7 +78,7 @@ public class GameMatchScreen extends State implements Screen {
 
 
         game.getBatch().begin();
-        game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);
+        game.getBatch().draw(new Texture(Gdx.files.internal("background-3.png")), 0, 0);
         if (super.getTurn() == 1) {
             game.getBatch().draw(new Texture(Gdx.files.internal("turn-1.png")), 550, 600, 215, 130);
         }
