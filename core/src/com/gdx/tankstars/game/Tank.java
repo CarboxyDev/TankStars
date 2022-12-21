@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
 
+import java.io.Serializable;
+
 public abstract class Tank extends Sprite {
 
     private float speed = 1.0f;

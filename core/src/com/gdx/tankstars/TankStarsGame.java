@@ -9,7 +9,9 @@ import com.gdx.tankstars.game.bullets.GameMatchScreenD;
 import com.gdx.tankstars.screen.GameMatchScreen;
 import com.gdx.tankstars.screen.StartScreen;
 
-public class TankStarsGame extends Game {
+import java.io.Serializable;
+
+public class TankStarsGame extends Game implements Serializable {
 
   private SpriteBatch batch;
 
