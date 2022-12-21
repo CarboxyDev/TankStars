@@ -31,7 +31,7 @@ public class GameMatchScreen implements Screen {
     public void render(float delta) {
         game.getBatch().begin();
         game.getBatch().draw(backgroundTexture, 0, 0);
-        //gameMatch.drawAssets();
+        gameMatch.drawAssets();
         game.getBatch().end();
 
     }

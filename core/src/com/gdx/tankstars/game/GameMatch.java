@@ -32,10 +32,8 @@ public class GameMatch extends State {
 
     public void drawAssets() {
 
-        game.getBatch().begin();
-        game.getBatch().draw(tank, tank.getX(), tank.getY(), tank.getOriginX(), tank.getOriginY(), tank.getWidth(), tank.getHeight(), tank.getScaleX(), tank.getScaleY(), tank.getRotation());
+//        game.getBatch().draw(tank, tank.getX(), tank.getY(), tank.getOriginX(), tank.getOriginY(), tank.getWidth(), tank.getHeight(), tank.getScaleX(), tank.getScaleY(), tank.getRotation());
         tank.draw(game.getBatch());
-        game.getBatch().end();
 
     }
 
