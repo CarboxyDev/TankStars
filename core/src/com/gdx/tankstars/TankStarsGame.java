@@ -3,6 +3,7 @@ package com.gdx.tankstars;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.gdx.tankstars.game.TerrainGenerator;
+import com.gdx.tankstars.game.TerrainGenerator_1;
 import com.gdx.tankstars.screen.GameMatchScreen;
 
 public class TankStarsGame extends Game {
@@ -25,8 +26,9 @@ public class TankStarsGame extends Game {
   public void create() {
     batch = new SpriteBatch();
 
-    //this.setScreen(new TerrainGenerator());
+    //this.setScreen(new TerrainGenerator_1());
     //this.setScreen(new StartScreen(this));
+    //
     this.setScreen(new GameMatchScreen((this)));
   }
 

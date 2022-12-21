@@ -4,9 +4,11 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Bezier;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.gdx.tankstars.TankStarsGame;
+import com.gdx.tankstars.screen.GamePauseScreen;
 
 public class TerrainGenerator implements Screen {
 
@@ -16,6 +18,8 @@ public class TerrainGenerator implements Screen {
     private Bezier<Vector2> bezierCurve;
     private Box2DDebugRenderer debugRenderer;
     private TankStarsGame game;
+
+    private final Rectangle pauseButton = new Rectangle(1212, 25, 45, 45);
 
     public TerrainGenerator(TankStarsGame game) {
         this.game = game;
@@ -58,6 +62,20 @@ public class TerrainGenerator implements Screen {
 
     @Override
     public void render(float delta) {
+
+        if (Gdx.input.justTouched()) {
+            int x = Gdx.input.getX();
+            int y = Gdx.input.getY();
+            //System.out.println(x + " | " + y);
+
+            if (pauseButton.contains(x, y)) {
+                System.out.println("Select Pause button");
+                game.setScreen(new GamePauseScreen(game));
+            }
+
+        }
+
+
         game.getBatch().begin();
         game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);
         game.getBatch().end();
