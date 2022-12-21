@@ -79,6 +79,8 @@ public class TerrainGenerator implements Screen {
 
         game.getBatch().begin();
         game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);
+        game.getBatch().draw(new Texture(Gdx.files.internal("turn-1.png")), 550, 600, 215, 130);
+        //game.getBatch().draw(new Texture(Gdx.files.internal("turn-2.png")), 550, 600, 215, 130);
         game.getBatch().end();
 
         // Health Bar Player 1 (100% width)
