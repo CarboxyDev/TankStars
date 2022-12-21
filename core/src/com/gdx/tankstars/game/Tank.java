@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-public class Tank extends Sprite {
+public abstract class Tank extends Sprite {
     private float speed = 5.0f;
     private float rotationSpeed = 85.0f;
 
@@ -13,7 +13,6 @@ public class Tank extends Sprite {
     }
 
     public void move(float deltaTime) {
-        // Update the position of the tank based on its current velocity
         translate(getVelocity().x * deltaTime, getVelocity().y * deltaTime);
     }
 
@@ -21,8 +20,8 @@ public class Tank extends Sprite {
         setVelocity(velocity.x, velocity.y);
     }
 
+    // Set the velocity of the tank
     public void setVelocity(float x, float y) {
-        // Set the velocity of the tank
         setX(getX() + x);
         setY(getY() + y);
     }
@@ -31,8 +30,8 @@ public class Tank extends Sprite {
         return new Vector2(getX(), getY());
     }
 
+    // Rotate the tank by the specified angle
     public void rotate(float angle) {
-        // Rotate the tank by the specified angle
         rotate(angle);
     }
 
