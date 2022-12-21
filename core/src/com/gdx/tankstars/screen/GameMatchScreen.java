@@ -138,6 +138,7 @@ public class GameMatchScreen extends State implements Screen {
         float fuelMeterWidth = 150 * (float) fuel / 100;
         // remove the if statement below when not in development
         if (fuelMeterWidth == 0) {
+            tank1.refillFuel();
             super.changeTurn();
         }
 

@@ -40,7 +40,7 @@ public abstract class Tank extends Sprite {
     }
 
     public void setPosition(Vector2 position) {
-        if (position.x > 5 && position.x < 1275 && this.getFuel() > 0) {
+        if (position.x > 5 && position.x < 1320 && this.getFuel() > 0) {
             this.position = position;
             this.burnFuel();
         }
@@ -83,5 +83,9 @@ public abstract class Tank extends Sprite {
 
     public int getFuel() {
         return fuel;
+    }
+
+    public void refillFuel() {
+        this.fuel = 100;
     }
 }
