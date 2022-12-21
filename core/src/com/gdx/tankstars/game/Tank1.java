@@ -7,18 +7,23 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Tank1 extends Tank {
 
-    private Vector2 position;
     Texture tankTexture;
+
+
 
     public Tank1(Vector2 position) {
         super();
-         this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_left.png"));
-         this.position = position;
+        this.tankTexture = new Texture(Gdx.files.internal("tanks/beast_left.png"));
+        this.setPosition(position);
 
     }
 
     @Override
     public void draw(SpriteBatch batch) {
+        Vector2 position = this.getPosition();
         batch.draw(tankTexture, position.x, position.y);
     }
+
+
+
 }

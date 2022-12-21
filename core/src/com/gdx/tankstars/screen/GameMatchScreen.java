@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.gdx.tankstars.TankStarsGame;
 import com.gdx.tankstars.game.GameMatch;
 import com.gdx.tankstars.game.State;
@@ -52,8 +53,13 @@ public class GameMatchScreen extends State implements Screen {
 
 
         float speed = gameMatch.getTank1().getSpeed();
+        Vector2 tank1Pos = gameMatch.getTank1().getPosition();
+        Vector2 tank2Pos = gameMatch.getTank2().getPosition();
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             System.out.println("Press left");
+            if (super.getTurn() == 1) {
+                gameMatch.getTank1().setPosition(new Vector2(tank1Pos.x - speed, tank1Pos.y));
+            }
         }
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             System.out.println("Press Right");

@@ -13,6 +13,7 @@ public abstract class Tank extends Sprite {
     private int health = 100;
     private int fuel = 100;
     private int type;
+    private Vector2 position;
 
     public int getType() {
         return type;
@@ -31,7 +32,13 @@ public abstract class Tank extends Sprite {
     }
 
 
+    public Vector2 getPosition() {
+        return position;
+    }
 
+    public void setPosition(Vector2 position) {
+        this.position = position;
+    }
 
 
     public void move(float deltaTime) {
