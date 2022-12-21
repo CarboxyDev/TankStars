@@ -15,7 +15,6 @@ public class Tank2 extends Tank {
     }
 
 
-
     @Override
     public void draw(SpriteBatch batch) {
         Vector2 position = this.getPosition();

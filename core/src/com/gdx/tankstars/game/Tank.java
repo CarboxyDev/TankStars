@@ -12,7 +12,6 @@ import java.io.Serializable;
 public abstract class Tank extends Sprite {
 
     private float speed = 1.0f;
-    private float rotationSpeed = 85.0f;
     private int health = 100;
     private int fuel = 100;
     private int type;
