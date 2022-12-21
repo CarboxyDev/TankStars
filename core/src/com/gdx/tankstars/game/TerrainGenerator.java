@@ -59,31 +59,31 @@ public class TerrainGenerator implements Screen {
     @Override
     public void render(float delta) {
         game.getBatch().begin();
-        game.getBatch().draw(new Texture(Gdx.files.internal("background.png")), 0, 0);
+        game.getBatch().draw(new Texture(Gdx.files.internal("background-2.png")), 0, 0);
         game.getBatch().end();
 
         // Health Bar Player 1 (100% width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(210 / 255.0f, 210 / 255.0f, 210 / 255.0f, 1);
-        shapeRenderer.rect( 75, Gdx.graphics.getHeight() - 60, 200, 30);
+        shapeRenderer.rect( 120, Gdx.graphics.getHeight() - 73, 200, 30);
         shapeRenderer.end();
 
         // Health Meter Player 1 (variable width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(247 / 255.0f, 64 / 255.0f, 64 / 255.0f, 1);
-        shapeRenderer.rect( 75, Gdx.graphics.getHeight() - 60, 200, 30);
+        shapeRenderer.rect( 120, Gdx.graphics.getHeight() - 73, 200, 30);
         shapeRenderer.end();
 
         // Health Bar Player 2 (100% width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(210 / 255.0f, 210 / 255.0f, 210 / 255.0f, 1);
-        shapeRenderer.rect( Gdx.graphics.getWidth() - (75 + 200), Gdx.graphics.getHeight() - 60, 200, 30);
+        shapeRenderer.rect( Gdx.graphics.getWidth() - (120 + 200), Gdx.graphics.getHeight() - 73, 200, 30);
         shapeRenderer.end();
 
         // Health Meter Player 2 (variable width)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(247 / 255.0f, 64 / 255.0f, 64 / 255.0f, 1);
-        shapeRenderer.rect( Gdx.graphics.getWidth() - (75 + 200), Gdx.graphics.getHeight() - 60, 200, 30);
+        shapeRenderer.rect( Gdx.graphics.getWidth() - (120 + 200), Gdx.graphics.getHeight() - 73, 200, 30);
         shapeRenderer.end();
 
 
