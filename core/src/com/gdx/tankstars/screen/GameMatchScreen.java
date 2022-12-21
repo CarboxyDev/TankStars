@@ -57,7 +57,7 @@ public class GameMatchScreen extends State implements Screen {
             game.getBatch().draw(new Texture(Gdx.files.internal("turn-2.png")), 550, 600, 215, 130);
         }
 
-        //gameMatch.drawAssets();
+        gameMatch.drawAssets();
         game.getBatch().end();
 
         // Health Bar Player 1 (100% width)
